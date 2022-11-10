@@ -6,11 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:rgb(237, 204, 205);"> </body>
-<body>
-    <article>
-        <h2>Trail Cleanup Organizations (NGOs list inclusive)</h2>
-        <h2>The website is still under development, please reach out to us later. </h2>
-      <article>
+<body style="background-color:rgb(255, 255, 237);"> </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid rgb(118, 87, 87);
+    margin-bottom: 12px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(171, 155, 155);
+    font-size: 18px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid rgb(255, 191, 191);
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #be7dff;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>List of Trail Cleanup Service Providers across NWA</h2>
+  
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names" title="Type in a name">
+  
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:30%;">Organization Name</th>
+      <th style="width:20%;">Base Location</th>
+      <th style="width:20%;">Contact Number</th>
+      <th style="width:30%;">Service Hours</th>
+    </tr>
+    <tr>
+      <td>Community Clinic</td>
+      <td>Fayetteville</td>
+      <td>479-123-4567</td>
+      <td>Mon-Fri (9 a.m - 5 p.m.)</td>
+    </tr>
+    <tr>
+      <td>City of Fayetteville Arkansas</td>
+      <td>Fayetteville</td>
+      <td>479-234-5678</td>
+      <td>Mon-Fri (9 a.m - 5 p.m.)</td>
+    </tr>
+     <tr>
+      <td>The City of Bentonville</td>
+      <td>Bentonville</td>
+      <td>502-123-4567</td>
+      <td>Mon-Fri (9 a.m - 5 p.m.)</td>
+    </tr>
+     <tr>
+      <td>The City of Rogers</td>
+      <td>Rogers</td>
+      <td>479-345-6789</td>
+      <td>Mon-Fri (10 a.m - 5 p.m.)</td>
+    </tr>
+     <tr>
+      <td>Beaver Watershed Alliance</td>
+      <td>Fayetteville</td>
+      <td>479-456-7890</td>
+      <td>Mon-Fri (8 a.m - 5 p.m.)</td>
+    </tr>
+  </table>
+  
+  <script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+  
 </body>
 </html>
