@@ -40,6 +40,7 @@
         <p>Do you have a question or comment? Fill out this short form, and we’ll get back with you.</p>
         <h2>Ask an Advisor</h2>
         <h1><b>Student Name *</b></h1>
+        
         <form action="/action_page.php" method="get" name="myForm">
           <label for="fname">First name:</label>
           <input type="text" id="fname" name="fname"required><br><br>
@@ -81,11 +82,18 @@
   <li>Learning System Technical  Education</li>
 </ol>  
 <br>
-<button type="submit" value="Submit">Submit</button>
+
+<script>
+  function openWin() {
+    window.open("https://www.iis.net/");
+  }
+  </script>
+
 <button type="reset" value="Reset">Reset</button>
+<input type='submit' name="submit" value="Post Form" onclick="openWin()" />
 
-
-        </form>
+ </form>
+ 
         
 </body>
 </html>
