@@ -6,11 +6,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:rgb(169, 255, 255);"></body>
-<body>
-    <article>
-        <h2>Details of Volunteers - Trail Cleanup</h2>
-        <h2>The website is still under development, please reach out to us later. </h2>
-      <article>
+<body style="background-color:rgb(219, 204, 237);"> </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid rgb(118, 87, 87);
+    margin-bottom: 12px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(171, 155, 155);
+    font-size: 18px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid rgb(211, 191, 191);
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #be7dff;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Details of Trail Cleanup Volunteers</h2>
+  
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Volunteers" title="Type in a Name">
+  
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:30%;">Name of Volunteers</th>
+      <th style="width:20%;">Address</th>
+      <th style="width:20%;">Contact</th>
+      <th style="width:30%;">Availability</th>
+    </tr>
+    <tr>
+      <td>Mario Gotze</td>
+      <td>100 Leverett Avenue, Fayetteville, AR</td>
+      <td>+1479-123-2345</td>
+      <td>On Weekends</td>
+    </tr>
+    <tr>
+        <td>Manuel Neuer</td>
+        <td>200 Garland Avenue, Fayetteville, AR</td>
+        <td>+1479-123-0000</td>
+        <td>Only on Sundays</td>
+    </tr>
+    <tr>
+        <td>Thomas Muller</td>
+        <td>300 Sycamore Avenue, Fayetteville, AR</td>
+        <td>+1479-123-5555</td>
+        <td>Any Day from 5-7 PM</td>
+    </tr>
+    <tr>
+        <td>Serge Gnabry</td>
+        <td>400 MLK Avenue, Fayetteville, AR</td>
+        <td>+1479-123-5555</td>
+        <td>Only Weekends</td>
+    </tr>
+    <tr>
+      <td>Niclas Fullkrug</td>
+      <td>500 Dickson Street, Fayetteville, AR</td>
+      <td>+1479-123-5555</td>
+      <td>On Mondays</td>
+    </tr>
+    <tr>
+      <td>Kai Havertz</td>
+      <td>600 Holland Avenue, Fayetteville, AR</td>
+      <td>+1479-123-6666</td>
+      <td>On Wednesdays and Thursdays</td>
+    </tr>
+    <tr>
+      <td>Leon Goretzka</td>
+      <td>700 Appleby Avenue, Fayetteville, AR</td>
+      <td>+1999-123-6666</td>
+      <td>Any Day</td>
+    </tr>
+    <tr>
+      <td>Antonio Rudiger</td>
+      <td>800 Cambridge Avenue, Fayetteville, AR</td>
+      <td>+1222-123-2222</td>
+      <td>Any Day</td>
+    </tr>
+  </table>
+  
+  <script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+  
 </body>
 </html>
