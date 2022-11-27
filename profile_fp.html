@@ -6,11 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:rgb(169, 255, 255);"></body>
-<body>
-    <article>
-        <h2>Details of Volunteers - Food Pantry</h2>
-        <h2>The website is still under development, please reach out to us later. </h2>
-      <article>
+<body style="background-color:rgb(216, 255, 206);"> </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid rgb(118, 87, 87);
+    margin-bottom: 12px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(171, 155, 155);
+    font-size: 18px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid rgb(255, 191, 191);
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #be7dff;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>List of Individual Volunteers offering help in food pantry services</h2>
+  
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names" title="Type in a name">
+  
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:20%;">Name</th>
+      <th style="width:20%;">City</th>
+      <th style="width:20%;">Contact Number</th>
+      <th style="width:20%;">Email</th>
+      <th style="width:20%;">Availability Hours</th>
+    </tr>
+    <tr>
+      <td>John Brown</td>
+      <td>Fayetteville</td>
+      <td>479-765-680</td>
+      <td>jb@gmail.com</td>
+      <td>Thurs-Fri (8 a.m - 1 p.m.)</td>
+    </tr>
+    <tr>
+      <td>Kim Davis</td>
+      <td>Fayetteville</td>
+      <td>479-597-039</td>
+      <td>kdavis@yahoo.com</td>
+      <td>Mon-Wed (11 a.m - 5 p.m.)</td>
+    </tr>
+     <tr>
+      <td>Jessie Garcia</td>
+      <td>Bentonville</td>
+      <td>502-789-670</td>
+      <td>jga@gmail.com</td>
+      <td>Sat (8 a.m - 10 a.m.)</td>
+    </tr>
+     <tr>
+      <td>David Miller</td>
+      <td>Springdale</td>
+      <td>479-390-473</td>
+      <td>dmiller@ujs.com</td>
+      <td>Tues (10 a.m - 1 p.m.)</td>
+    </tr>
+  </table>
+  
+  <script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+
+  <header>
+        <nav>
+            <ul>
+                 <li><a href="update_volunteerlist_fp.html">Update Details</a></li>
+                              
+            </ul>
+        </nav>
+  </header> 
 </body>
 </html>
