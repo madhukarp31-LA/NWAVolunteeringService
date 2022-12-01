@@ -6,11 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:rgb(255, 220, 200);"></body>
-<body>
-    <article>
-        <h2>Details of Volunteers - Event Organizing</h2>
-        <h2>Currently, the website is still under development, please reach out to us later. </h2>
-      <article>
+<body style="background-color:rgb(255, 220, 200);"> </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+#myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid rgb(177, 143, 143);
+    margin-bottom: 12px;
+  }
+  
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(203, 194, 194);
+    font-size: 18px;
+  }
+  
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #myTable tr {
+    border-bottom: 1px solid rgb(227, 206, 206);
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #ffcb8b;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>List of Volunteers and Details</h2>
+  
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names" title="Type in a name">
+  
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:30%;">Volunteer Name</th>
+      <th style="width:20%;">Email</th>
+      <th style="width:20%;">Contact</th>
+      <th style="width:30%;">Availability</th>
+    </tr>
+    <tr>
+      <td>abc mike</td>
+      <td>abc.mike@gmail.com</td>
+      <td>+1479-345-2345</td>
+      <td>On Weekends</td>
+    </tr>
+    <tr>
+        <td>xyz will</td>
+        <td>xyz.will@yahoo.com</td>
+        <td>+1479-123-1230</td>
+        <td>Only on Mondays</td>
+    </tr>
+    <tr>
+        <td>pqr Patrick</td>
+        <td>pqr.patrick@outlook.com</td>
+        <td>+1479-555-5555</td>
+        <td>Any Day</td>
+    </tr>
+    <tr>
+        <td>Matt abc</td>
+        <td>matt.abc@gmail.com</td>
+        <td>+1479-555-5555</td>
+        <td>Only Weekdays</td>
+    </tr>
+    <tr>
+      <td>Bob pqr</td>
+      <td>bob.pqr@ymail.com</td>
+      <td>+1479-222-5555</td>
+      <td>On Fridays</td>
+    </tr>
+  </table>
+  
+  <script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+  
 </body>
 </html>
